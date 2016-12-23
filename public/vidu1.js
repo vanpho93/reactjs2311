@@ -1,11 +1,16 @@
 var KhoaHoc = React.createClass(
   {
+    show(){
+      var {ten, gia} = this.props;
+      alert(ten + ': ' + gia);
+    },
     render: function(){
+      var {ten, gia} = this.props;
       return(
-        <div>
-          <p>{this.props.ten}</p>
-          <Gia>100.000 VND</Gia>
-          <button>Xoa</button>
+        <div className="div-khoa-hoc">
+          <p>{ten}</p>
+          <Gia>{gia}</Gia>
+          <button onClick={this.show}>Show</button>
         </div>
       )
     }
