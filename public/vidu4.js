@@ -1,10 +1,12 @@
-var App = React.createClass({
-  getInitialState(){
-    return {hinh: 1};
-  },
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {hinh: 1};
+    this.change = this.change.bind(this);
+  }
   change(i){
     this.setState({hinh: (this.state.hinh + i + 10) % 5 + 1 });
-  },
+  }
   render(){
     return (
       <div style={{width:'150px'}}>
@@ -15,6 +17,6 @@ var App = React.createClass({
       </div>
     )
   }
-})
+}
 
 ReactDOM.render(<App/>, document.getElementById('root'));

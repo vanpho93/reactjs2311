@@ -1,16 +1,18 @@
-var KhoaHoc = React.createClass(
-  {
+class KhoaHoc extends React.Component{
+    constructor(props){
+      super(props);
+      this.state = {soHocVien: this.props.hocVien};
+      this.add = this.add.bind(this);
+      this.show = this.show.bind(this);
+    }
     add(){
       this.setState({soHocVien: this.state.soHocVien + 1});
-    },
-    getInitialState(){
-      return {soHocVien: this.props.hocVien};
-    },
+    }
     show(){
       var {ten, gia} = this.props;
       alert(ten + ': ' + gia);
-    },
-    render: function(){
+    }
+    render(){
       var {ten, gia} = this.props;
       var {soHocVien} = this.state;
       return(
@@ -24,15 +26,14 @@ var KhoaHoc = React.createClass(
       )
     }
   }
-);
 
-var Gia = React.createClass({
+class Gia extends React.Component{
   render(){
     return (
       <p>{this.props.children}</p>
     )
   }
-})
+}
 /*
   Tao component Gia
   Hien thi ra gia 300.000 VND
